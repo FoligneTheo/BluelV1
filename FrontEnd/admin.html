@@ -86,13 +86,16 @@
                 <div id="add-photo-view" class="hidden">
                     <h2>Ajouter une photo</h2>
                     <form id="add-photo-form">
+                        <label for="photo-file"> <i id="logo-image" class="fa-regular fa-image"> </i> <button
+                                type="submit" id="add-photo">+ ajouter photo</button>
+                            jpg, png : 4mo max
+                        </label>
+                        <input type="file" id="photo-file" name="file" accept="image/*" required>
                         <label for="photo-title">Titre :</label>
                         <input type="text" id="photo-title" name="title" required>
-                        <label for="photo-file">Fichier :</label>
-                        <input type="file" id="photo-file" name="file" accept="image/*" required>
                         <label for="photo-category">Catégorie :</label>
                         <select id="photo-category" name="category" required>
-                            <option value="" disabled selected>Sélectionnez une catégorie</option>
+                            <option value="" disabled selected> </option>
                             <option value="1">Objets</option>
                             <option value="2">Appartements</option>
                             <option value="3">Hotels & Restaurants</option>

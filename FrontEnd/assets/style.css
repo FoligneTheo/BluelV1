@@ -574,5 +574,140 @@ footer nav ul {
 
 /*/////modal ajout photo///*/
 
+#add-photo-view {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
 
-#back-to-gallery {}
+#add-photo-view h2 {
+	font-family: 'Work Sans', sans-serif;
+	font-size: 26px;
+	color: black;
+	text-align: center;
+}
+
+#add-photo-form {
+	width: 100%;
+	max-width: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+}
+
+#add-photo-form input[type="file"] {
+	display: none;
+	/* On masque le champ de fichier natif */
+}
+
+#add-photo-form label[for="photo-file"] {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	background-color: #f0f4f8;
+	border-radius: 8px;
+	padding: 20px;
+	cursor: pointer;
+}
+
+#add-photo-form label[for="photo-file"]::before {
+	content: url('placeholder_icon.png');
+	/* Icône d'image (à remplacer par la tienne) */
+	display: block;
+	width: 40px;
+	height: 40px;
+	margin-bottom: 10px;
+}
+
+#add-photo-form label[for="photo-file"] span {
+	font-size: 18px;
+	color: #4a4a4a;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+#add-photo-form label[for="photo-file"] p {
+	font-size: 12px;
+	color: #a0a0a0;
+	margin: 0;
+}
+
+#add-photo-form input[type="text"],
+#add-photo-form select {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	border-radius: 5px;
+	padding: 0 10px;
+	width: 100%;
+}
+
+/* #add-photo-form button[type="submit"],
+#back-to-gallery {
+	background-color: #706e6e;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 1.2em;
+	height: 50px;
+	cursor: pointer;
+	width: 100%;
+} */
+
+#photo-category {
+	height: 50px;
+	font-size: 1.2em;
+	color: #333;
+	/* Couleur du texte */
+	background-color: #fff;
+	/* Fond blanc */
+	border: none;
+	/* Retire les bordures */
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	/* Ajout de l'ombre */
+	border-radius: 5px;
+	/* Coins arrondis */
+	padding: 0 10px;
+	/* Espacement intérieur */
+	cursor: pointer;
+	/* Curseur interactif */
+	appearance: none;
+	/* Retire l'apparence native du select */
+}
+
+#photo-category:focus {
+	outline: none;
+	/* Retire le contour au focus */
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.2);
+	/* Ombre plus prononcée */
+}
+
+#add-photo {
+	font-family: 'Work Sans';
+	background-color: #CBD6DC;
+	color: #306685;
+	/* font-weight: bold; */
+	border: none;
+	border-radius: 30px;
+	font-size: 1.2em;
+	height: 50px;
+	cursor: pointer;
+	width: 100%;
+}
+
+#logo-image {
+	width: 76px;
+	height: 76px;
+	top: 799px;
+	left: 681px;
+	padding: 9.5px 3.93px 6.88px 3.93px;
+	gap: 0px;
+	opacity: 0px;
+	font-size: 50px;
+	color: #B9C5CC;
+}
