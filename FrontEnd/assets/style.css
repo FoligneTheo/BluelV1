@@ -365,6 +365,8 @@ footer nav ul {
 	/* width: 400px; */
 	max-width: 90%;
 	/* position: relative; */
+	width: 630px;
+	height: 670px;
 }
 
 
@@ -396,7 +398,7 @@ footer nav ul {
 }
 
 #photo-gallery img {
-	width: 100%;
+	width: 75%;
 	height: auto;
 	/* border-radius: 8px; */
 	object-fit: cover;
@@ -519,9 +521,9 @@ footer nav ul {
 	/* Ajustez selon vos besoins */
 	right: 5px;
 	/* Ajustez selon vos besoins */
-	width: 25px;
+	width: 17px;
 	/* Ajustez selon vos besoins */
-	height: 25px;
+	height: 17px;
 	/* Ajustez selon vos besoins */
 	background-color: black;
 	color: white;
@@ -530,7 +532,7 @@ footer nav ul {
 	align-items: center;
 	border-radius: 3px;
 	cursor: pointer;
-	font-size: 16px;
+	font-size: 10px;
 	/* Taille de l'icône */
 	z-index: 10;
 }
@@ -582,19 +584,22 @@ footer nav ul {
 }
 
 #add-photo-view h2 {
-	font-family: 'Work Sans', sans-serif;
+	font-family: 'work sans';
+	font-weight: 1;
 	font-size: 26px;
 	color: black;
 	text-align: center;
+	margin-bottom: 40px;
 }
 
+
 #add-photo-form {
-	width: 100%;
-	max-width: 300px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	gap: 15px;
+	/* Espacement uniforme */
+	width: 60%;
+	/* Largeur globale */
 }
 
 #add-photo-form input[type="file"] {
@@ -607,10 +612,11 @@ footer nav ul {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	width: 100%;
+	width: 420px;
+	height: 169px;
 	background-color: #f0f4f8;
 	border-radius: 8px;
-	padding: 20px;
+	/* padding: 20px; */
 	cursor: pointer;
 }
 
@@ -639,12 +645,18 @@ footer nav ul {
 #add-photo-form input[type="text"],
 #add-photo-form select {
 	height: 50px;
+	/* Assure une hauteur uniforme */
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 	border-radius: 5px;
 	padding: 0 10px;
 	width: 100%;
+	/* Largeur uniforme */
+	box-sizing: border-box;
+	/* Inclut padding et bordure dans la largeur */
+	min-width: 420px;
+	/* Optionnel, largeur minimale */
 }
 
 /* #add-photo-form button[type="submit"],
@@ -697,7 +709,7 @@ footer nav ul {
 	font-size: 1.2em;
 	height: 50px;
 	cursor: pointer;
-	width: 100%;
+	width: 45%;
 }
 
 #logo-image {
@@ -710,4 +722,27 @@ footer nav ul {
 	opacity: 0px;
 	font-size: 50px;
 	color: #B9C5CC;
+}
+
+#validity-img {
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin: 2em auto;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	border: none;
+}
+
+#back-to-gallery-controls {
+
+	text-align: center;
+	margin-top: 20px;
+	margin-left: 60px;
+	margin-right: 60px;
+	border-top: 2px solid #B3B3B3;
 }
