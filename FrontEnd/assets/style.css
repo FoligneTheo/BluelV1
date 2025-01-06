@@ -362,11 +362,11 @@ footer nav ul {
 	background: white;
 	padding: 20px;
 	border-radius: 8px;
-	/* width: 400px; */
-	max-width: 90%;
-	/* position: relative; */
 	width: 630px;
-	height: 670px;
+	height: 688px;
+	/* max-width: 90%; */
+
+	/* position: relative; */
 }
 
 
@@ -394,11 +394,11 @@ footer nav ul {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 	gap: 10px;
-	margin: 60px;
+	margin: 10px;
 }
 
 #photo-gallery img {
-	width: 75%;
+	width: 76px;
 	height: auto;
 	/* border-radius: 8px; */
 	object-fit: cover;
@@ -410,6 +410,9 @@ footer nav ul {
 	margin-top: 5px;
 }
 
+#photo-gallery li {
+	width: 76px;
+}
 
 #switch-to-add-photo {
 	font-family: 'Syne';
@@ -422,17 +425,20 @@ footer nav ul {
 	border-radius: 60px;
 	padding: 0.5rem 1rem;
 	cursor: pointer;
+	border: 0;
 }
 
 #photo-gallery-controls {
-	text-align: center;
-	/* Centre tout le contenu dans le conteneur */
-	margin-top: 20px;
-	/* Ajuste l'espace au-dessus du bouton */
-	margin-left: 60px;
-	margin-right: 60px;
+	margin: 20px auto;
+	/* Centre horizontalement */
+	width: calc(5 * 78.63px + 4 * 10px);
+	/* Largeur pour 5 images + 4 espacements de 10px */
 	border-top: 2px solid #B3B3B3;
+	text-align: center;
+	padding-top: 10px;
+	/* Espace au-dessus du bouton */
 }
+
 
 #add-photo-button {
 	display: block;
@@ -521,9 +527,9 @@ footer nav ul {
 	/* Ajustez selon vos besoins */
 	right: 5px;
 	/* Ajustez selon vos besoins */
-	width: 17px;
+	width: 25px;
 	/* Ajustez selon vos besoins */
-	height: 17px;
+	height: 25px;
 	/* Ajustez selon vos besoins */
 	background-color: black;
 	color: white;
@@ -532,7 +538,7 @@ footer nav ul {
 	align-items: center;
 	border-radius: 3px;
 	cursor: pointer;
-	font-size: 10px;
+	font-size: 16px;
 	/* Taille de l'icône */
 	z-index: 10;
 }
@@ -573,158 +579,168 @@ footer nav ul {
 	display: none;
 }
 
+#photo-gallery {
+	display: grid;
+	grid-template-columns: repeat(5, 78.63px);
+	/* 5 images par ligne avec une largeur fixe */
+	/* gap: 10px 0; */
+	/* Espacement uniquement entre les lignes (10px) et 0px entre les colonnes */
+	justify-content: center;
+	/* Centrer la galerie horizontalement */
+	padding: 20px;
+	/* Supprime tout espace autour de la galerie */
+}
+
+#photo-gallery li {
+	position: relative;
+	width: 78.63px;
+	/* Largeur fixe */
+	height: 139.87px;
+	/* Hauteur fixe */
+}
+
+#photo-gallery img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* Les images s'adaptent sans déformation */
+	display: block;
+	/* Suppression des bordures arrondies */
+}
+
+.delete-icon {
+	position: absolute;
+	top: 5px;
+	/* Position en haut */
+	right: 5px;
+	/* Position à droite */
+	background-color: #000;
+	color: #fff;
+	width: 18px;
+	/* Taille de l'icône */
+	height: 18px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	font-size: 12px;
+	/* Taille du texte de l'icône */
+	z-index: 10;
+}
+
+.delete-icon:hover {
+	background-color: gray;
+}
 
 /*/////modal ajout photo///*/
 
-#add-photo-view {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-}
-
-#add-photo-view h2 {
+.modal-content h2 {
 	font-family: 'work sans';
 	font-weight: 1;
 	font-size: 26px;
 	color: black;
 	text-align: center;
-	margin-bottom: 40px;
+	margin-top: 40px;
 }
 
 
-#add-photo-form {
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
-	/* Espacement uniforme */
-	width: 60%;
-	/* Largeur globale */
-}
-
-#add-photo-form input[type="file"] {
-	display: none;
-	/* On masque le champ de fichier natif */
-}
-
-#add-photo-form label[for="photo-file"] {
+.add-photo-form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	width: 420px;
-	height: 169px;
-	background-color: #f0f4f8;
-	border-radius: 8px;
-	/* padding: 20px; */
-	cursor: pointer;
-}
-
-#add-photo-form label[for="photo-file"]::before {
-	content: url('placeholder_icon.png');
-	/* Icône d'image (à remplacer par la tienne) */
-	display: block;
-	width: 40px;
-	height: 40px;
-	margin-bottom: 10px;
-}
-
-#add-photo-form label[for="photo-file"] span {
-	font-size: 18px;
-	color: #4a4a4a;
-	font-weight: bold;
-	margin-bottom: 5px;
-}
-
-#add-photo-form label[for="photo-file"] p {
-	font-size: 12px;
-	color: #a0a0a0;
-	margin: 0;
-}
-
-#add-photo-form input[type="text"],
-#add-photo-form select {
-	height: 50px;
-	/* Assure une hauteur uniforme */
-	font-size: 1.2em;
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-	border-radius: 5px;
-	padding: 0 10px;
+	/* Centre les champs horizontalement */
+	gap: 20px;
+	/* Espacement entre les champs */
 	width: 100%;
-	/* Largeur uniforme */
-	box-sizing: border-box;
-	/* Inclut padding et bordure dans la largeur */
-	min-width: 420px;
-	/* Optionnel, largeur minimale */
+	padding-top: 30px;
 }
 
-/* #add-photo-form button[type="submit"],
-#back-to-gallery {
-	background-color: #706e6e;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	font-size: 1.2em;
-	height: 50px;
-	cursor: pointer;
-	width: 100%;
-} */
 
-#photo-category {
-	height: 50px;
-	font-size: 1.2em;
-	color: #333;
-	/* Couleur du texte */
-	background-color: #fff;
-	/* Fond blanc */
-	border: none;
-	/* Retire les bordures */
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-	/* Ajout de l'ombre */
-	border-radius: 5px;
-	/* Coins arrondis */
-	padding: 0 10px;
-	/* Espacement intérieur */
-	cursor: pointer;
-	/* Curseur interactif */
-	appearance: none;
-	/* Retire l'apparence native du select */
+.photo-preview {
+	background-color: #E8F1F6;
+	padding: 20px;
+	width: 380px;
+	height: 129px;
+	text-align: center;
 }
 
-#photo-category:focus {
-	outline: none;
-	/* Retire le contour au focus */
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.2);
-	/* Ombre plus prononcée */
+.photo-change {
+	background-color: #e8f1f6;
+	width: 380px;
+	height: 129px;
+	text-align: center;
 }
 
-#add-photo {
-	font-family: 'Work Sans';
-	background-color: #CBD6DC;
-	color: #306685;
-	/* font-weight: bold; */
-	border: none;
-	border-radius: 30px;
-	font-size: 1.2em;
-	height: 50px;
-	cursor: pointer;
-	width: 45%;
+.photo-change img {
+	max-width: 50%;
+	max-height: 50%;
+	object-fit: cover;
 }
 
-#logo-image {
-	width: 76px;
-	height: 76px;
-	top: 799px;
-	left: 681px;
-	padding: 9.5px 3.93px 6.88px 3.93px;
-	gap: 0px;
-	opacity: 0px;
-	font-size: 50px;
+
+.photo-preview .photo-icon {
+	/* width: 50px;
+	height: 50px; */
+	font-size: 60px;
 	color: #B9C5CC;
+	justify-content: center;
+	flex-direction: column;
+	display: flex;
 }
 
-#validity-img {
+.photo-preview span {
+	font-family: 'Work Sans', sans-serif;
+	font-size: 14px;
+	color: #666;
+	cursor: pointer;
+}
+
+.photo-preview p {
+	font-family: 'Work Sans', sans-serif;
+	font-size: 12px;
+	color: #aaa;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* Centre les labels */
+	width: 420px;
+	/* Largeur fixe des champs */
+}
+
+.form-group label {
+	font-family: 'Work Sans', sans-serif;
+	font-size: 14px;
+	color: #333;
+	margin-bottom: 5px;
+	text-align: left;
+	/* Alignement du texte du label */
+	width: 100%;
+	/* Aligne le label avec le champ */
+}
+
+.form-group input,
+.form-group select {
+	width: 420px;
+	/* Largeur fixe */
+	height: 50px;
+	/* Hauteur fixe */
+	/* padding: 10px; */
+	/* Espacement interne */
+	font-size: 14px;
+	font-family: 'Work Sans', sans-serif;
+	outline: none;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	/* Légère ombre */
+	border: 0;
+	background-color: white;
+}
+
+
+
+.submit-button {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
@@ -735,14 +751,93 @@ footer nav ul {
 	border-radius: 60px;
 	padding: 0.5rem 1rem;
 	cursor: pointer;
+	border: 0;
+}
+
+.add-photo-button {
+	/* font-family: 'Syne', sans-serif; */
+	color: #306685;
+	background-color: #CBD6DC;
 	border: none;
+	border-radius: 60px;
+	padding: 10px 20px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
-#back-to-gallery-controls {
 
-	text-align: center;
-	margin-top: 20px;
-	margin-left: 60px;
-	margin-right: 60px;
-	border-top: 2px solid #B3B3B3;
+/* .submit-button:hover {
+	background-color: #155d3b;
+} */
+
+.back-button {
+	font-family: 'Work Sans', sans-serif;
+	color: #1D6154;
+	background: none;
+	border: none;
+	cursor: pointer;
+	text-decoration: underline;
+	margin-top: 10px;
 }
+
+/* Alignement du header de la modal (croix + flèche retour) */
+.modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+
+/* Bouton Retour (flèche) */
+.back-arrow {
+	background: none;
+	border: none;
+	font-size: 20px;
+	color: #333;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 10px;
+	/* Ajustez l'espace avec le bord gauche */
+	z-index: 10;
+}
+
+.back-arrow i {
+	font-size: 20px;
+}
+
+
+
+/* Bouton croix */
+.close-btn {
+	font-size: 25px;
+	color: #333;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 10px;
+	z-index: 10;
+}
+
+/* Alignement du header de la modal (croix uniquement) */
+.modal-header {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	position: relative;
+	padding: 10px;
+}
+
+/* Bouton croix */
+.close-btn {
+	font-size: 25px;
+	color: #333;
+	cursor: pointer;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 10;
+}
+
+
+#back-to-gallery {}
