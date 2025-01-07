@@ -222,7 +222,7 @@ li:hover {
 
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
+	/* margin-bottom: 1em; */
 }
 
 #categories {
@@ -524,13 +524,9 @@ footer nav ul {
 .delete-icon {
 	position: absolute;
 	top: 5px;
-	/* Ajustez selon vos besoins */
 	right: 5px;
-	/* Ajustez selon vos besoins */
 	width: 25px;
-	/* Ajustez selon vos besoins */
 	height: 25px;
-	/* Ajustez selon vos besoins */
 	background-color: black;
 	color: white;
 	display: flex;
@@ -539,13 +535,11 @@ footer nav ul {
 	border-radius: 3px;
 	cursor: pointer;
 	font-size: 16px;
-	/* Taille de l'icône */
 	z-index: 10;
 }
 
 .delete-icon:hover {
 	background-color: gray;
-	/* Effet de survol */
 }
 
 
@@ -557,23 +551,46 @@ footer nav ul {
 }
 
 
+.portfolio-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	justify-content: center;
+	margin-bottom: 60px;
+}
+
+.portfolio-header h2 {
+	font-size: 24px;
+	font-weight: 700;
+	color: #1D6154;
+	margin: 0;
+	padding-right: 10px;
+}
+
 #edit-projects-button {
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
 	font-size: 16px;
-	font-weight: bold;
+	font-weight: normal;
 	display: flex;
 	align-items: center;
 	gap: 5px;
+	color: black;
+	padding: 0;
 }
 
-#edit-projects-button img {
-	width: 16px;
-	height: 16px;
-	font-family: 'Work Sans';
-	font-weight: normal;
+#edit-projects-button i {
+	font-size: 18px;
+	color: black;
 }
+
+#edit-projects-button:hover {
+	text-decoration: underline;
+}
+
+
+
 
 #categories.hidden {
 	display: none;
@@ -582,49 +599,37 @@ footer nav ul {
 #photo-gallery {
 	display: grid;
 	grid-template-columns: repeat(5, 78.63px);
-	/* 5 images par ligne avec une largeur fixe */
-	/* gap: 10px 0; */
-	/* Espacement uniquement entre les lignes (10px) et 0px entre les colonnes */
 	justify-content: center;
-	/* Centrer la galerie horizontalement */
 	padding: 20px;
-	/* Supprime tout espace autour de la galerie */
+
 }
 
 #photo-gallery li {
 	position: relative;
 	width: 78.63px;
-	/* Largeur fixe */
 	height: 139.87px;
-	/* Hauteur fixe */
 }
 
 #photo-gallery img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	/* Les images s'adaptent sans déformation */
 	display: block;
-	/* Suppression des bordures arrondies */
 }
 
 .delete-icon {
 	position: absolute;
 	top: 5px;
-	/* Position en haut */
 	right: 5px;
-	/* Position à droite */
 	background-color: #000;
 	color: #fff;
 	width: 18px;
-	/* Taille de l'icône */
 	height: 18px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
 	font-size: 12px;
-	/* Taille du texte de l'icône */
 	z-index: 10;
 }
 
@@ -648,9 +653,7 @@ footer nav ul {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* Centre les champs horizontalement */
 	gap: 20px;
-	/* Espacement entre les champs */
 	width: 100%;
 	padding-top: 30px;
 }

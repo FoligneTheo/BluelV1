@@ -67,13 +67,18 @@ backArrow.addEventListener("click", () => {
 });
 
 // Gérer le bouton Modifier pour afficher la modal
-const editButton = document.createElement("button");
-editButton.id = "edit-projects-button";
-editButton.innerHTML = `
-    <img src="./assets/icons/edit-icon.png" alt="Modifier">
-`;
-editButton.style.margin = "10px 0";
-editButton.style.cursor = "pointer";
+const editButton = document.getElementById("edit-projects-button");
+
+editButton.addEventListener("click", () => {
+    modal.classList.remove("hidden"); // Affiche la modal
+});
+
+const closeModalBtn = document.getElementById("close-modal-btn"); // Bouton pour fermer la modal
+
+closeModalBtn.addEventListener("click", () => {
+    modal.classList.add("hidden"); // Cache la modal
+});
+
 
 // Ajouter le bouton au DOM, juste sous le titre "Mes Projets"
 const portfolioTitle = document.querySelector("#portfolio h2");
