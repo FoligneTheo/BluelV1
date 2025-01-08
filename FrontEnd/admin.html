@@ -118,16 +118,18 @@
                         <!-- Champs Titre et Catégorie -->
                         <div class="form-group">
                             <label for="photo-title">Titre</label>
-                            <input type="text" id="photo-title" name="title" placeholder="Entrez un titre" required>
+                            <input type="text" id="photo-title" name="title" required>
                         </div>
                         <div class="form-group">
                             <label for="photo-category">Catégorie</label>
                             <select id="photo-category" name="category" required>
-                                <option value="" disabled selected>Sélectionnez une catégorie</option>
+                                <option value="" disabled selected hidden></option>
                                 <option value="1">Objets</option>
                                 <option value="2">Appartements</option>
                                 <option value="3">Hotels & Restaurants</option>
                             </select>
+
+
                         </div>
 
                         <!-- Bouton Valider -->
