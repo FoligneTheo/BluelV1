@@ -102,7 +102,7 @@ photoFileInput.addEventListener("change", (event) => {
         reader.onload = (e) => {
             photoChangeContainer.innerHTML = `
                 <img src="${e.target.result}" alt="Prévisualisation de l'image" 
-                     style="width: 100%; max-height: 169px; object-fit: cover;" />
+                     style="max-height: 129px; object-fit: cover;" />
             `;
         };
 
