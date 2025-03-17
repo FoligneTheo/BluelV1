@@ -198,6 +198,8 @@ addPhotoForm.addEventListener("submit", async (event) => {
 
             addWorkToGallery(newWork.title, newWork.imageUrl, newWork.id);
 
+            addWorkToMainGallery(newWork); // ajoute l'élement a la galerie principale
+
             addPhotoForm.reset();
             resetPhotoPreview();
             checkFormValidity();
@@ -251,6 +253,7 @@ async function deleteWork(id, listItem) {
 
         if (response.ok) {
             listItem.remove();
+            removeWorkFromMainGallery(id); // supprime l'élément de la galerie principale
             console.log(`Travail avec l'ID ${id} supprimé.`);
         } else {
             console.error("Erreur lors de la suppression :", response.statusText);
@@ -260,5 +263,36 @@ async function deleteWork(id, listItem) {
     }
 }
 
-// Charger les travaux au chargement de la page
+// supprime l'élément de la galerie principale
+function removeWorkFromMainGallery(id) {
+    const worksContainer = document.getElementById("works");
+    const workToRemove = worksContainer.querySelector(`figure[data-id='${id}']`);
+
+    if (workToRemove) {
+        workToRemove.remove();
+        console.log(`Projet avec ID ${id} supprimé de la galerie principale.`);
+    }
+}
+
+// ajoute l'élement a la galerie principale
+function addWorkToMainGallery(work) {
+    const worksContainer = document.getElementById("works");
+
+    const figure = document.createElement("figure");
+    figure.dataset.id = work.id;
+
+    const img = document.createElement("img");
+    img.src = work.imageUrl;
+    img.alt = work.title;
+
+    const figcaption = document.createElement("figcaption");
+    figcaption.textContent = work.title;
+
+    figure.appendChild(img);
+    figure.appendChild(figcaption);
+
+    worksContainer.appendChild(figure);
+}
+
+
 loadWorks();
